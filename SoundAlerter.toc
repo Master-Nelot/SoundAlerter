@@ -2,7 +2,7 @@
 ## Title: SoundAlerter
 ## Notes: Sound Alerter for player used spells
 ## Notes-ruRU: Звуковое оповещение для заклинаний, используемых игроком.
-## Author: Trolololol, Abatorlos of Spinebreaker, Duskashes, Superk, Мастер (перевёл на русский)
+## Author: Trolololol, Abatorlos of Spinebreaker, Duskashes, Superk, перевёл на русский Master-f1
 ## SavedVariables: SoundAlerterDB
 ## Version: 1.1
 

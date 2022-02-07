@@ -22,7 +22,6 @@ dbDefaults = {
 		cycloneenemy = true,
 		hexenemy = true,
 		fearenemy = true,
-		sapenemy = true,
 		blindenemy = true,
 		blindselffriend = true,
 		polyenemy = true,
@@ -55,7 +54,6 @@ dbDefaults = {
 		castSuccess = false,
 		interrupt = false,
 		--заклинания
-		sapenemy = true,
 		ArenaPartner = false,
 		enemyinrange = false,
 		sayspell = true,
