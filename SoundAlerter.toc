@@ -1,7 +1,7 @@
 ﻿## Interface: 30300
 ## Title: SoundAlerter
 ## Notes: Sound Alerter for player used spells
-## Notes-RUru: Звуковое оповещение для заклинаний, используемых игроком.
+## Notes-ruRU: Звуковое оповещение для заклинаний, используемых игроком.
 ## Author: Trolololol, Abatorlos of Spinebreaker, Duskashes, Superk, Мастер (перевёл на русский)
 ## SavedVariables: SoundAlerterDB
 ## Version: 1.1
