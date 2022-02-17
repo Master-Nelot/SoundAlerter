@@ -127,7 +127,7 @@ function SoundAlerter:spellOptions(order, spellID, ...)
 	if spellname ~= nil then
 	return {
 		type = 'toggle',
-		name = "\124T"..icon..":24\124t"..spellname,							
+		name = "\124T"..icon..":24\124t"..spellname,
 		desc = function () 
 			GameTooltip:SetHyperlink(GetSpellLink(spellID));
 		end,
