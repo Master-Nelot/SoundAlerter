@@ -105,7 +105,7 @@ function SoundAlerter:GetSpellList ()--Имя заклинания соотве�
 			[316243] = "avatar",
 			[316271] = "escape",
 			[316289] = "easiness",
-			[316294] = "egida",
+			[316294] = "egida"
 		},
 		auraRemoved = {
 			--Друид
@@ -137,7 +137,7 @@ function SoundAlerter:GetSpellList ()--Имя заклинания соотве�
 			[48707] = "antimagicshelldown",
 			--Охотник
 			[19263] = "Deterrencedown",
-			[34471] = "beastwithindown",
+			[34471] = "beastwithindown"
 		},
 		castStart = {
 			--Друид
@@ -259,7 +259,7 @@ function SoundAlerter:GetSpellList ()--Имя заклинания соотве�
 			[691] = "summonpet",
 			[712] =  "summonpet",
 			[697] = "summonpet",
-			[30146] = "summonpet",
+			[30146] = "summonpet"
 		},
 		castSuccess = {
 			--Паладин
@@ -349,7 +349,7 @@ function SoundAlerter:GetSpellList ()--Имя заклинания соотве�
 			[316418] = "flow",
 			[316419] = "flow",
 			[316420] = "flow",
-			[316421] = "flow",
+			[316421] = "flow"
 		},
 		enemyDebuffs = {
 			[2094] = "Enemyblinded",
@@ -358,7 +358,7 @@ function SoundAlerter:GetSpellList ()--Имя заклинания соотве�
 			[118] = "EnemyPollied",
 			[33786] = "EnemyCycloned",
 			[51514] = "EnemyHexxed",
-			[316456] = "EnemyStunned",
+			[316456] = "EnemyStunned"
 		},
 		friendCCenemy = {
 			[2094] = "enemyblinded",
@@ -367,7 +367,7 @@ function SoundAlerter:GetSpellList ()--Имя заклинания соотве�
 			[12826] = "enemypollied",
 			[118] = "enemypollied",
 			[33786] = "enemycycloned",
-			[316456] = "Enemystunned",
+			[316456] = "Enemystunned"
 		},
 		enemyDebuffdown = {
 			[2094] = "blinddown",
@@ -376,7 +376,7 @@ function SoundAlerter:GetSpellList ()--Имя заклинания соотве�
 			[12826] = "polydown",
 			[33786] = "cyclonedown",
 			[51514] = "hexdown",
-			[316456] = "EnemyStunDown",
+			[316456] = "EnemyStunDown"
 		},
 		enemyDebuffdownAP = {
 			[2094] = "Blinddown",
@@ -385,7 +385,7 @@ function SoundAlerter:GetSpellList ()--Имя заклинания соотве�
 			[12826] = "Polydown",
 			[118] = "Polydown",
 			[33786] = "CycloneDown",
-			[316456] = "EnemyStundown",
+			[316456] = "EnemyStundown"
 		},
 		friendCCs = {
 			[33786] = "Friendcycloned",
@@ -398,7 +398,7 @@ function SoundAlerter:GetSpellList ()--Имя заклинания соотве�
 			[61025] = "polyfriend",
 			[61780] = "polyfriend",
 			[28271] = "polyfriend",
-			[6215] = "Friendfeared",
+			[6215] = "Friendfeared"
 		},
 		friendCCSuccess = {
 			[14309] = "friendfrozen",
@@ -414,7 +414,7 @@ function SoundAlerter:GetSpellList ()--Имя заклинания соотве�
 			[6215] = "friendfeared",
 			[10890] = "friendfeared",
 			[17928] = "friendfeared",
-			[2139] = "friendcountered",
+			[2139] = "friendcountered"
 		},
 		selfDebuff = {
 			[33786] = "Cyclone",
@@ -466,7 +466,7 @@ function SoundAlerter:GetSpellList ()--Имя заклинания соотве�
 			[18647] = "Banish",
 			[676] = "DIsarm",
 			[64044] = "Disarm2",
-			[19647] = "SpellLock",
+			[19647] = "SpellLock"
 		},
 		interruptFriend = {
 			[2139] = "friendcountered",
@@ -474,7 +474,7 @@ function SoundAlerter:GetSpellList ()--Имя заклинания соотве�
 			[1766] = "friendcountered",
 			[57994] = "friendcountered",
 			[72] = "friendcountered",
-			[47528] = "friendcountered",
+			[47528] = "friendcountered"
 		},
 	}
 end

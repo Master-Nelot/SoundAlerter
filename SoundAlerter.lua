@@ -355,7 +355,7 @@ function SoundAlerter:COMBAT_LOG_EVENT_UNFILTERED(event , ...)
 			if ((spellID == 42292) and sadb.trinketalert) then
 				if ((currentZoneType == "arena" or pvpType == "arena") or (sourceuid.target or sourceuid.focus)) then
 					if (self:ArenaClass(sourceGUID) and sadb.class) then
-						PlaySoundFile(sadb.sapath..".mp3"); --todo: convert ogg class to mp3
+						--PlaySoundFile(sadb.sapath..c..".mp3"); --todo: convert ogg class to mp3
 						self:ScheduleTimer("PlayTrinket", 0.4);
 					else
 						self:PlayTrinket()
