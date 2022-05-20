@@ -17,8 +17,10 @@ local function initOptions()
 	AceConfig:RegisterOptionsTable("SoundAlerter", SoundAlerter.options)
 end
 function SoundAlerter:ShowConfig()
+	InterfaceOptionsFrame:Hide()
 	initOptions()
 	AceConfigDialog:Open("SoundAlerter")
+	HideUIPanel(GameMenuFrame)
 end
 
 function SoundAlerter:ChangeProfile()
