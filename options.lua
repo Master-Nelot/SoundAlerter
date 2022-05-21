@@ -39,8 +39,9 @@ end
 local function setOption(info, value)
 	local name = info[#info]
 	sadb[name] = value
-	PlaySoundFile(sadb.sapath..name..".mp3");
+	PlaySoundFile(sadb.sapath..name..".mp3")
 end
+
 local function getOption(info)
 	local name = info[#info]
 	return sadb[name]
@@ -152,7 +153,7 @@ function SoundAlerter:OnOptionsCreate()
 								step = 0.1,
 								name = L["Master Volume"],
 								desc = L["Sets the master volume so sound alerts can be louder/softer"],
-								set = function (info, value) SetCVar ("Sound_MasterVolume",tostring (value)) end,
+								set = function (info, value) SetCVar("Sound_MasterVolume", tostring(value)) end,
 								get = function () return tonumber (GetCVar ("Sound_MasterVolume")) end,
 								order = 1,
 							},
@@ -162,8 +163,10 @@ function SoundAlerter:OnOptionsCreate()
 								name = L["Addon sounds only"],
 								desc = L["Sets other sounds to minimum, only hearing the addon sounds"],
 								func = function() 
-										SetCVar ("Sound_AmbienceVolume",tostring ("0")); SetCVar ("Sound_SFXVolume",tostring ("0")); SetCVar ("Sound_MusicVolume",tostring ("0")); 
-										print("|cffFF7D0ASoundAlerter|r: Addons will only be heard by your Client. To undo this, click the 'reset sound options' button.");
+										SetCVar("Sound_AmbienceVolume",tostring ("0"))
+										SetCVar("Sound_SFXVolume",tostring ("0"))
+										SetCVar("Sound_MusicVolume",tostring ("0")) 
+										print("|cffFF7D0ASoundAlerter|r: Addons will only be heard by your Client. To undo this, click the 'reset sound options' button.")
 									end,
 								order = 2,
 							},
@@ -172,9 +175,12 @@ function SoundAlerter:OnOptionsCreate()
 								width = 'normal',
 								name = L["Reset volume options"],
 								desc = L["Resets sound options"],
-								func = function() 
-										SetCVar ("Sound_MasterVolume",tostring ("1")); SetCVar ("Sound_AmbienceVolume",tostring ("1")); SetCVar ("Sound_SFXVolume",tostring ("1")); SetCVar ("Sound_MusicVolume",tostring ("1")); 
-										print("|cffFF7D0ASoundAlerter|r: Sound options reset.");
+								func = function()
+										SetCVar("Sound_MasterVolume",tostring ("1"))
+										SetCVar("Sound_AmbienceVolume",tostring ("1"))
+										SetCVar("Sound_SFXVolume",tostring ("1"))
+										SetCVar("Sound_MusicVolume",tostring ("1"))
+										print("|cffFF7D0ASoundAlerter|r: Sound options reset.")
 									end,
 								order = 3,
 							},
@@ -208,20 +214,22 @@ function SoundAlerter:OnOptionsCreate()
 						hidden = function() return not sadb.debugmode end,
 						name = L["Debug options"],
 						args = {
-							cspell = {
+							csname = {
 								type = 'input',
-								name = L["Custom spells entry name"],
+								name = L["Spell Name"],
+								desc = L["Print Spell Name"],
 								order = 1,
 							},
 							spelldebug = {
 								type = 'toggle',
 								name = L["Spell ID output debugging"],
+								desc = L["Print Spell ID output debugging"],
 								order = 2,
 							},
-							csname = {
+							cspell = {
 								type = 'input',
-								name = L["Spell Name"],
-								order = 2,
+								name = L["Custom spells entry name"],
+								order = 3,
 							},
 						},
 					},
@@ -240,7 +248,7 @@ function SoundAlerter:OnOptionsCreate()
 								confirm = true,
 								confirmText = L["Are you sure? This will remove all of your current sound alerts"],
 								func = function()
-									sadb.custom = nil
+									--! Написать код импорта
 								end,
 							},
 							export = {
@@ -262,6 +270,7 @@ function SoundAlerter:OnOptionsCreate()
 								type = 'input',
 								name = L["Export custom sound alerts"],
 								order = 3,
+								width = "full",
 							},
 						},
 					}
@@ -284,46 +293,46 @@ function SoundAlerter:OnOptionsCreate()
 				get = getOption,
 				order = -1,
 				args = {
+					chatalerts = {
+						type = 'toggle',
+						name = L["Disable Chat Alerts"],
+						desc = L["Disbles Chat notifications of special abilities in the chat bar"],
+						order = 1,
+					},
 					aruaApplied = {
 						type = 'toggle',
 						name = L["Disable buff applied"],
 						desc = L["Disables sound notifications of buffs applied"],
-						order = 1,
+						order = 2,
 					},
 					auraRemoved = {
 						type = 'toggle',
 						name = L["Disable Buff down"],
 						desc = L["Disables sound notifications of buffs down"],
-						order = 2,
+						order = 3,
 					},
 					castStart = {
 						type = 'toggle',
 						name = L["Disable spell casting"],
 						desc = L["Disables spell casting notifications"],
-						order = 3,
+						order = 4,
 					},
 					castSuccess = {
 						type = 'toggle',
 						name = L["Disable enemy cooldown abilities"],
 						desc = L["Disbles sound notifications of cooldown abilities"],
-						order = 4,
-					},
-					chatalerts = {
-						type = 'toggle',
-						name = L["Disable Chat Alerts"],
-						desc = L["Disbles Chat notifications of special abilities in the chat bar"],
 						order = 5,
 					},
-					interrupt = {
+					dEnemyDebuff = {
 						type = 'toggle',
-						name = L["Disable Interrupted Spells"],
-						desc = L["Check this option to disable notifications of friendly interrupted spells"],
+						name = L["Disable Enemy Debuff alerts"],
+						desc = L["Check this option to disable notifications of enemy debuff/CC alerts"],
 						order = 6,
 					},
-					dSelfDebuff = {
+					dEnemyDebuffDown = {
 						type = 'toggle',
-						name = L["Disable Self Debuff alerts"],
-						desc = L["Check this option to disable notifications of self debuff/CC alerts"],
+						name = L["Disable Enemy Debuff down alerts"],
+						desc = L["Check This option to disable notifications of enemy debuff/CC alerts"],
 						order = 7,
 					},
 					dArenaPartner = {
@@ -332,16 +341,16 @@ function SoundAlerter:OnOptionsCreate()
 						desc = L["Check this option to disable notifications of Arena Partner debuff/CC alerts"],
 						order = 8,
 					},
-					dEnemyDebuff = {
+					dSelfDebuff = {
 						type = 'toggle',
-						name = L["Disable Enemy Debuff alerts"],
-						desc = L["Check this option to disable notifications of enemy debuff/CC alerts"],
+						name = L["Disable Self Debuff alerts"],
+						desc = L["Check this option to disable notifications of self debuff/CC alerts"],
 						order = 9,
 					},
-					dEnemyDebuffDown = {
+					interrupt = {
 						type = 'toggle',
-						name = L["Disable Enemy Debuff down alerts"],
-						desc = L["Check This option to disable notifications of enemy debuff/CC alerts"],
+						name = L["Disable Interrupted Spells"],
+						desc = L["Check this option to disable notifications of friendly interrupted spells"],
 						order = 10,
 					},
 				},
@@ -390,7 +399,7 @@ function SoundAlerter:OnOptionsCreate()
 								type = 'toggle',
 								name = SpellTextureName(1784),
 								desc = function ()
-									GameTooltip:SetHyperlink(GetSpellLink(1784));
+									GameTooltip:SetHyperlink(GetSpellLink(1784))
 								end,
 								order = 3,
 							},
@@ -488,7 +497,7 @@ function SoundAlerter:OnOptionsCreate()
 								type = 'toggle',
 								name = GetSpellInfo(42292),
 								desc = function ()
-									GameTooltip:SetHyperlink(GetSpellLink(42292));
+									GameTooltip:SetHyperlink(GetSpellLink(42292))
 								end,
 								order = 19,
 							},
@@ -645,7 +654,10 @@ function SoundAlerter:OnOptionsCreate()
 						type = 'toggle',
 						name = L["Alert Class calling for trinketting in Arena"],
 						desc = L["Alert when an enemy class trinkets in arena"],
-						confirm = function() PlaySoundFile(sadb.sapath.."Paladin.mp3"); self:ScheduleTimer("PlayTrinket", 0.4); end,
+						confirm = function()
+							PlaySoundFile(sadb.sapath.."Paladin.mp3")
+							self:ScheduleTimer("PlayTrinket", 0.5)
+						end,
 						order = 2,
 					},
 					drinking = {
@@ -664,7 +676,7 @@ function SoundAlerter:OnOptionsCreate()
 								type = 'toggle',
 								name = SpellTexture(42292)..L["PvP Trinket/Every Man for Himself"],
 								desc = function ()
-									GameTooltip:SetHyperlink(GetSpellLink(42292));
+									GameTooltip:SetHyperlink(GetSpellLink(42292))
 								end,
 								descStyle = "custom",
 								order = 1,
@@ -1019,7 +1031,7 @@ function SoundAlerter:OnOptionsCreate()
 				--inline = true,
 				name = L["Enemy Debuff Down"],
 				desc = L["Alerts you when your (or your arena partner) casted CC's on an enemy is down"],
-				disabled = function() return sadb.eEnemyDebuffDown end,
+				disabled = function() return sadb.dEnemyDebuffDown end,
 				set = setOption,
 				get = getOption,
 				order = 7,
@@ -1084,7 +1096,7 @@ function SoundAlerter:OnOptionsCreate()
 			newalert = {
 				type = 'execute',
 				name = function ()
-					if sadb.custom[L["New Alert"]] then  
+					if sadb.custom[L["New Alert"]] then 
 						return L["Rename the New Alert entry"]
 					else
 						return L["New Alert"]
@@ -1093,7 +1105,7 @@ function SoundAlerter:OnOptionsCreate()
 				order = -1,
 				func = function()
 					sadb.custom[L["New Alert"]] = {
-						name = L["New Alert"],
+						name = L["Enter New Name"],
 						soundfilepath = L["New Alert"]..".[ogg/mp3/wav]",
 						sourceuidfilter = "any",
 						destuidfilter = "any",
@@ -1135,8 +1147,10 @@ function SoundAlerter:OnOptionsCreate()
 					desc = L["Menu entry for the spell (eg. Hex down on arena partner)"],
 					type = 'input',
 					set = function(info, value)
-						--if sadb.custom[value] then log(L["same name already exists"]) return end
-						if sadb.custom[value] then log(L["same name already exists"]) return end
+						if sadb.custom[value] then
+							print(L["Same name already exists"])
+							return
+						end
 						sadb.custom[key].name = value
 						sadb.custom[key].order = 100
 						sadb.custom[value] = sadb.custom[key]
@@ -1224,13 +1238,6 @@ function SoundAlerter:OnOptionsCreate()
 					get = function(info, k) return sadb.custom[key].eventtype[k] end,
 					set = function(info, k, v) sadb.custom[key].eventtype[k] = v end,
 				},
-				sourceuidfilter = {
-					type = 'select',
-					order = 61,
-					name = L["Source unit"],
-					desc = L["Is the person who casted the spell your target/focus/mouseover?"],
-					values = self.SA_UNIT,
-				},
 				sourcetypefilter = {
 					type = 'select',
 					order = 60,
@@ -1238,26 +1245,33 @@ function SoundAlerter:OnOptionsCreate()
 					desc = L["Who casted the spell? Leave on 'any' if a spell got casted on you"],
 					values = self.SA_TYPE,
 				},
-				sourcecustomname = {
-					type= 'input',
+				desttypefilter = {
+					type = 'select',
+					order = 61,
+					name = L["Spell Destination"],
+					desc = L["Who was afflicted by the spell? Leave it on 'any' if it's a spell cast or a buff"],
+					values = self.SA_TYPE,
+				},
+				sourceuidfilter = {
+					type = 'select',
 					order = 62,
-					name = L["Custom source name"],
-					desc = L["Example: If the spell came from a specific player or boss"],
-					disabled = function() return not (sadb.custom[key].sourceuidfilter == "custom") end,
+					name = L["Source unit"],
+					desc = L["Is the person who casted the spell your target/focus/mouseover?"],
+					values = self.SA_UNIT,
 				},
 				destuidfilter = {
 					type = 'select',
-					order = 65,
+					order = 63,
 					name = L["Spell destination unit"],
 					desc = L["Was the spell destination towards your target/focus/mouseover? (Leave on 'player' if it's yourself)"],
 					values = self.SA_UNIT,
 				},
-				desttypefilter = {
-					type = 'select',
-					order = 63,
-					name = L["Spell Destination"],
-					desc = L["Who was afflicted by the spell? Leave it on 'any' if it's a spell cast or a buff"],
-					values = self.SA_TYPE,
+				sourcecustomname = {
+					type= 'input',
+					order = 65,
+					name = L["Custom source name"],
+					desc = L["Example: If the spell came from a specific player or boss"],
+					disabled = function() return not (sadb.custom[key].sourceuidfilter == "custom") end,
 				},
 				destcustomname = {
 					type= 'input',

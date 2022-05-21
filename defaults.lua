@@ -11,10 +11,11 @@ dbDefaults = {
 		trinket = true,
 		drinking = true,
 		class = true,
-		--оповещения в чате
+		custom = {},
+		cspell = "",
+		--оповещения в чат
 		caonlyTF = true,
 		stealthenemy = false,
-		vanishalert = true,
 		interruptenemy = false,
 		sapenemy = false,
 		sapselffriend = false,
@@ -31,7 +32,6 @@ dbDefaults = {
 		chatdownself = false,
 		vanishTF = true,
 		stealthTF = true,
-		--текст в строке ввода
 		InterruptEnemyText = "#enemy# прерван заклинанием #spell#",
 		InterruptSelfText = "#enemy# сбил мне каст!",
 		friendchat = "#enemy# кастует #spell# в #friend#",
@@ -42,7 +42,7 @@ dbDefaults = {
 		sapfriendtext = "Сап на #friend#!",
 		trinketalerttext = "#enemy# использует тринкет!",
 		chatgroup = "SAY",
-		--отключить
+		--переключатели
 		chatdownfriend = false,
 		interruptself = false,
 		trinketalert = false,
@@ -52,17 +52,11 @@ dbDefaults = {
 		castStart = false,
 		castSuccess = false,
 		interrupt = false,
-		--заклинания
 		ArenaPartner = false,
 		enemyinrange = false,
-		sayspell = true,
-		enemyinterrupts = true,
-		--отключенные заклинания по умолчанию
+		--отключенные заклинания
 		PresenceofMind = false,
 		Starfire = false,
 		lavaburst = false,
-		custom = {},
-		--отладка
-		cspell = "",
 	}
 }

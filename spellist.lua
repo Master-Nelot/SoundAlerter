@@ -1,5 +1,5 @@
 --[[SoundAlerter for 3.3.5a by Trolollolol Credits to Abatorlos of Spinebreaker, Duskashes, Superk]]
-function SoundAlerter:GetSpellList ()--Имя заклинания соответствует файлу .mp3
+function SoundAlerter:GetSpellList ()
 	return {
 		auraApplied = {
 			--Друид
