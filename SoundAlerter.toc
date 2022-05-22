@@ -4,7 +4,7 @@
 ## Notes-ruRU: Звуковое оповещение для заклинаний, используемых игроком.
 ## Author: Trolololol, Abatorlos of Spinebreaker, Duskashes, Superk, Master-f1
 ## SavedVariables: SoundAlerterDB
-## Version: 1.3.3
+## Version: 1.3.4
 
 SoundAlerter.xml
 Locales\locales.xml

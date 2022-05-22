@@ -350,10 +350,12 @@ function SoundAlerter:COMBAT_LOG_EVENT_UNFILTERED(event, ...)
 			end
 			if ((spellID == 42292) and sadb.trinketalert) then
 				if ((currentZoneType == "arena" or pvpType == "arena") or (sourceuid.target or sourceuid.focus)) then
-					if sadb.class then
+					if (sadb.class and sourceGUID ~= nil) then
 						local arenaClass = self:ArenaClass(sourceGUID)
-						PlaySoundFile(sadb.sapath..arenaClass..".mp3")
-						self:ScheduleTimer("PlayTrinket", 0.5)
+						if (arenaClass ~= nil) then
+							PlaySoundFile(sadb.sapath..arenaClass..".mp3")
+							self:ScheduleTimer("PlayTrinket", 0.5)
+						end
 					else
 						self:PlayTrinket()
 					end
