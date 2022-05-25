@@ -32,6 +32,7 @@ dbDefaults = {
 		chatdownself = false,
 		vanishTF = true,
 		stealthTF = true,
+		bubbleTF = false,
 		InterruptEnemyText = "#enemy# прерван заклинанием #spell#",
 		InterruptSelfText = "#enemy# сбил мне каст!",
 		friendchat = "#enemy# кастует #spell# в #friend#",

@@ -163,7 +163,6 @@ function SoundAlerter:PlaySpell(list, spellID, ...)
 end
 
 function SoundAlerter:COMBAT_LOG_EVENT_UNFILTERED(event, ...)
-	--todo:Божественный щит+Тринкет чат оповещения
 	local _,currentZoneType = IsInInstance()
 	local pvpType, isFFA, faction = GetZonePVPInfo()
 	if (not ((pvpType == "contested" and sadb.field) or (pvpType == "hostile" and sadb.field) or (pvpType == "friendly" and sadb.field) or 
@@ -348,13 +347,15 @@ function SoundAlerter:COMBAT_LOG_EVENT_UNFILTERED(event, ...)
 					SendChatMessage(gsub(gsub(sadb.enemychat, "(#spell#)", GetSpellLink(spellID)), "(#enemy#)", sourceName), sadb.chatgroup, nil, nil)
 				end
 			end
-			if ((spellID == 42292) and sadb.trinketalert) then
+			if ((spellID == 42292) and sadb.trinket) then
 				if ((currentZoneType == "arena" or pvpType == "arena") or (sourceuid.target or sourceuid.focus)) then
-					if (sadb.class and sourceGUID ~= nil) then
-						local arenaClass = self:ArenaClass(sourceGUID)
-						if (arenaClass ~= nil) then
-							PlaySoundFile(sadb.sapath..arenaClass..".mp3")
-							self:ScheduleTimer("PlayTrinket", 0.5)
+					if (sadb.class) then
+						if (sourceGUID ~= nil) then
+							local arenaClass = self:ArenaClass(sourceGUID)
+							if (arenaClass ~= nil) then
+								PlaySoundFile(sadb.sapath..arenaClass..".mp3")
+								self:ScheduleTimer("PlayTrinket", 0.5)
+							end
 						end
 					else
 						self:PlayTrinket()
