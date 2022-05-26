@@ -347,7 +347,7 @@ function SoundAlerter:COMBAT_LOG_EVENT_UNFILTERED(event, ...)
 					SendChatMessage(gsub(gsub(sadb.enemychat, "(#spell#)", GetSpellLink(spellID)), "(#enemy#)", sourceName), sadb.chatgroup, nil, nil)
 				end
 			end
-			if ((spellID == 42292) and sadb.trinket) then
+			if ((spellID == 42292 or spellID == 65547) and sadb.trinket) then
 				if ((currentZoneType == "arena" or pvpType == "arena") or (sourceuid.target or sourceuid.focus)) then
 					if (sadb.class) then
 						if (sourceGUID ~= nil) then
