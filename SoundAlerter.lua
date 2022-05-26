@@ -369,7 +369,7 @@ function SoundAlerter:COMBAT_LOG_EVENT_UNFILTERED(event, ...)
 				end
 			end
 			if (not sadb.chatalerts) then
-				if ((spellID == 42292) and sadb.trinketalert) then
+				if ((spellID == 42292 or spellID == 65547) and sadb.trinketalert) then
 					SendChatMessage(gsub(sadb.trinketalerttext, "(#enemy#)", sourceName), sadb.chatgroup, nil, nil)
 				end
 			end
