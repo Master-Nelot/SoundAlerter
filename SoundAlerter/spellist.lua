@@ -299,6 +299,10 @@ function SoundAlerter:GetSpellList ()
 			[16190] = "manaTide",
 			[2484] = "earthbind",
 			[8177] = "grounding",
+			[51490] = "thunder",
+			[59156] = "thunder",
+			[59158] = "thunder",
+			[59159] = "thunder",
 			--Маг
 			[12051] = "evocation",
 			[11958] = "coldSnap",
@@ -349,7 +353,8 @@ function SoundAlerter:GetSpellList ()
 			[316418] = "flow",
 			[316419] = "flow",
 			[316420] = "flow",
-			[316421] = "flow"
+			[316421] = "flow",
+			[320552] = "flapping"
 		},
 		enemyDebuffs = {
 			[2094] = "Enemyblinded",
