@@ -126,6 +126,7 @@ function SoundAlerter:GetSpellList ()
 			[871] = "shieldWallDown",
 			[12292] = "deathWishdown",
 			[20230] = "RetaliationDown",
+			[23920] = "spellReflectionDown",
 			--Жрец
 			[33206] = "PSDown",
 			[47585] = "dispersionDown",

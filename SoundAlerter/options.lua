@@ -798,7 +798,7 @@ function SoundAlerter:OnOptionsCreate()
 						inline = true,
 						name = L["|cffC79C6EWarrior|r"],
 						order = 7,
-						args = listOption({1719,871,12292,46924,20230},"auraRemoved"),
+						args = listOption({1719,871,12292,46924,20230,23920},"auraRemoved"),
 					},
 					priest	= {
 						type = 'group',
